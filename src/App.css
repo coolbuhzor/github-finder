@@ -376,8 +376,20 @@ table th {
   margin-right: 0.6rem;
 }
 
+/* extra styles added by me */
+.userGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
+  /* extra styles added by me */
+  .userGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .hide-sm {
     display: none;
   }
