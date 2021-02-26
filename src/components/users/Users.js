@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Spinner from '../layouts/Spinner';
 import UserItem from './UserItem';
-import PropTypes from 'prop-types';
-
+import GithubContext from '../../context/github/githubContext';
 // users and loading were directly destructured. we could pass in props in the function and do const {users, loading}= props. then reolace users and loading with props.users and props.loading
-const Users = ({ users, loading }) => {
+const Users = () => {
+  const githubContext = useContext(GithubContext);
+  const { loading, users } = githubContext;
   if (loading) {
     return (
       <div>
@@ -20,11 +21,6 @@ const Users = ({ users, loading }) => {
       </div>
     );
   }
-};
-
-Users.propTypes = {
-  users: PropTypes.array.isRequired,
-  loading: PropTypes.bool.isRequired,
 };
 
 const userGrid = {
